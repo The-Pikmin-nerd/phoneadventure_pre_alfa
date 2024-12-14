@@ -1,0 +1,67 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjp6bheicsi0r"]
+
+[ext_resource type="Texture2D" uid="uid://dr3iia0qvfeql" path="res://Recources/stars-2643089_1920.jpg" id="1_h6q4h"]
+
+[sub_resource type="GDScript" id="GDScript_oq503"]
+script/source = "extends Node2D  # Ou Control, selon votre projet
+
+func _ready():
+	var screen_size = OS.window_size
+	print(\"Taille de l'écran détectée : \", screen_size)
+
+	# Exemple : ajuster un sprite en fonction de l'écran
+	if screen_size.x < 720:  # Écran mobile avec petite largeur
+		$Sprite.scale = Vector2(0.5, 0.5)
+	else:
+		$Sprite.scale = Vector2(1, 1)
+"
+
+[sub_resource type="Theme" id="Theme_ok6mn"]
+
+[node name="Main2D" type="Node2D"]
+script = SubResource("GDScript_oq503")
+
+[node name="Walpeper" type="Sprite2D" parent="."]
+position = Vector2(967, 628)
+texture = ExtResource("1_h6q4h")
+
+[node name="PlayButton" type="Button" parent="Walpeper"]
+modulate = Color(1, 0, 0, 1)
+offset_left = -953.0
+offset_top = 141.0
+offset_right = -415.0
+offset_bottom = 367.0
+theme = SubResource("Theme_ok6mn")
+theme_override_font_sizes/font_size = 90
+button_mask = 3
+text = "Quit"
+
+[node name="PlayButton" type="Button" parent="."]
+modulate = Color(1, 1, 0, 1)
+offset_left = 35.0
+offset_top = 232.0
+offset_right = 573.0
+offset_bottom = 458.0
+theme = SubResource("Theme_ok6mn")
+theme_override_font_sizes/font_size = 90
+button_mask = 3
+text = "Play"
+
+[node name="MainText" type="Label" parent="."]
+offset_top = 27.0
+offset_right = 1912.0
+offset_bottom = 113.0
+theme_override_font_sizes/font_size = 84
+text = "Phone Adventure_"
+horizontal_alignment = 1
+
+[node name="PlayButton2" type="Button" parent="."]
+modulate = Color(1, 1, 0, 1)
+offset_left = 16.0
+offset_top = 498.0
+offset_right = 554.0
+offset_bottom = 724.0
+theme = SubResource("Theme_ok6mn")
+theme_override_font_sizes/font_size = 90
+button_mask = 3
+text = "Settings"

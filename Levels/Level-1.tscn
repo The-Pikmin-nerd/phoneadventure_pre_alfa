@@ -1,0 +1,108 @@
+[gd_scene load_steps=8 format=3 uid="uid://cvx2ewikl6vnk"]
+
+[ext_resource type="Texture2D" uid="uid://b72jeu15j0qsa" path="res://Recources/space-art-5626848.jpg" id="1_8p2w0"]
+[ext_resource type="Texture2D" uid="uid://d1wbuobcsxxgv" path="res://Recources/smartphone-5830488_1920.png" id="2_gyub1"]
+[ext_resource type="Script" path="res://Levels/player.gd" id="2_pfh43"]
+[ext_resource type="Texture2D" uid="uid://qf271coe5ii4" path="res://Recources/wii-152197_1920.png" id="4_ny5aw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w6he7"]
+size = Vector2(1938.58, 594.93)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vs4u3"]
+size = Vector2(120, 241)
+
+[sub_resource type="GDScript" id="GDScript_0bhdy"]
+script/source = "extends Camera2D
+
+func _ready():
+	# Initialisation des limites de la caméra dynamiquement.
+	update_camera_limits()
+
+func _process(delta: float) -> void:
+	# Vérifie la position de la caméra à chaque frame.
+	if position.y > limit_bottom:
+		position.y = limit_bottom
+
+func update_camera_limits():
+	# Mise à jour dynamique des limites de la caméra.
+	limit_top = max(limit_top, 0)  # La limite supérieure ne peut pas être négative.
+	limit_left = max(limit_left, 0) # La limite gauche ne peut pas être négative.
+"
+
+[node name="Level_1" type="Node2D"]
+
+[node name="Baground" type="Sprite2D" parent="."]
+position = Vector2(493, 564)
+texture = ExtResource("1_8p2w0")
+
+[node name="Wiiplatform" type="StaticBody2D" parent="."]
+position = Vector2(338, 942)
+scale = Vector2(0.322917, 0.295833)
+
+[node name="wiiPlatform" type="Sprite2D" parent="Wiiplatform"]
+texture = ExtResource("4_ny5aw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wiiplatform"]
+visible = false
+position = Vector2(-30.9677, 23.6619)
+shape = SubResource("RectangleShape2D_w6he7")
+one_way_collision_margin = 10.0
+debug_color = Color(0.918699, 6.77681e-05, 0.701187, 0.42)
+
+[node name="Wiiplatform2" type="StaticBody2D" parent="."]
+position = Vector2(338, 942)
+scale = Vector2(0.322917, 0.295833)
+
+[node name="wiiPlatform" type="Sprite2D" parent="Wiiplatform2"]
+position = Vector2(4344.77, -253.522)
+texture = ExtResource("4_ny5aw")
+
+[node name="wiiPlatform" type="Sprite2D" parent="Wiiplatform2/wiiPlatform"]
+position = Vector2(2347.35, 530.705)
+texture = ExtResource("4_ny5aw")
+
+[node name="wiiPlatform" type="Sprite2D" parent="Wiiplatform2/wiiPlatform/wiiPlatform"]
+position = Vector2(2347.35, 530.705)
+texture = ExtResource("4_ny5aw")
+
+[node name="wiiPlatform" type="Sprite2D" parent="Wiiplatform2/wiiPlatform/wiiPlatform/wiiPlatform"]
+position = Vector2(2316.38, -1172.96)
+texture = ExtResource("4_ny5aw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wiiplatform2"]
+visible = false
+position = Vector2(4354.06, -236.62)
+shape = SubResource("RectangleShape2D_w6he7")
+one_way_collision_margin = 10.0
+debug_color = Color(0.918699, 6.77681e-05, 0.701187, 0.42)
+
+[node name="Wiiplatform3" type="StaticBody2D" parent="."]
+position = Vector2(355, 925)
+scale = Vector2(0.322917, 0.295833)
+
+[node name="wiiPlatform" type="Sprite2D" parent="Wiiplatform3"]
+position = Vector2(2050.06, 23.662)
+texture = ExtResource("4_ny5aw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wiiplatform3"]
+visible = false
+position = Vector2(2056.26, 54.0845)
+shape = SubResource("RectangleShape2D_w6he7")
+one_way_collision_margin = 10.0
+debug_color = Color(0.918699, 6.77681e-05, 0.701187, 0.42)
+
+[node name="Player" type="CharacterBody2D" parent="."]
+script = ExtResource("2_pfh43")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+position = Vector2(339, 603)
+scale = Vector2(0.12551, 0.125)
+texture = ExtResource("2_gyub1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(340, 601)
+shape = SubResource("RectangleShape2D_vs4u3")
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(342, 491)
+script = SubResource("GDScript_0bhdy")

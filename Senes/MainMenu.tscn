@@ -1,0 +1,66 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjp6bheicsi0r"]
+
+[ext_resource type="Texture2D" uid="uid://dr3iia0qvfeql" path="res://Recources/stars-2643089_1920.jpg" id="1_h6q4h"]
+[ext_resource type="Script" path="res://Senes/play_button.gd" id="2_d71dp"]
+
+[sub_resource type="Theme" id="Theme_ok6mn"]
+
+[node name="Main2D" type="Node2D"]
+
+[node name="Walpeper" type="Sprite2D" parent="."]
+position = Vector2(850, 869)
+scale = Vector2(1.56719, 1.80554)
+texture = ExtResource("1_h6q4h")
+
+[node name="QuitButton" type="Button" parent="Walpeper"]
+modulate = Color(1, 0, 0, 1)
+anchors_preset = -1
+anchor_left = -0.00784388
+anchor_top = 0.000664669
+anchor_right = -0.00784388
+anchor_bottom = 0.000664669
+offset_left = -505.618
+offset_top = -80.0521
+offset_right = -78.6182
+offset_bottom = 85.9481
+theme = SubResource("Theme_ok6mn")
+theme_override_font_sizes/font_size = 90
+button_mask = 3
+text = "Quit"
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayButton" type="Button" parent="."]
+modulate = Color(1, 1, 0, 1)
+offset_left = 35.0
+offset_top = 207.0
+offset_right = 573.0
+offset_bottom = 433.0
+theme = SubResource("Theme_ok6mn")
+theme_override_font_sizes/font_size = 90
+button_mask = 3
+text = "Play"
+script = ExtResource("2_d71dp")
+metadata/_edit_use_anchors_ = true
+
+[node name="MainText" type="Label" parent="."]
+offset_top = 34.0
+offset_right = 1912.0
+offset_bottom = 149.0
+theme_override_font_sizes/font_size = 84
+text = "Phone Adventure_"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="SettingsButton" type="Button" parent="."]
+modulate = Color(1, 1, 0, 1)
+offset_left = 34.0
+offset_top = 461.0
+offset_right = 572.0
+offset_bottom = 687.0
+theme = SubResource("Theme_ok6mn")
+theme_override_font_sizes/font_size = 90
+button_mask = 3
+text = "Settings"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="PlayButton" to="PlayButton" method="_on_pressed"]
