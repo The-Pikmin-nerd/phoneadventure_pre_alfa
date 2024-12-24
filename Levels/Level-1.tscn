@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://b6y8fxq3t42gc"]
+[gd_scene load_steps=6 format=3 uid="uid://b6y8fxq3t42gc"]
 
 [ext_resource type="Texture2D" uid="uid://b72jeu15j0qsa" path="res://Recources/space-art-5626848.jpg" id="1_6s60i"]
+[ext_resource type="AudioStream" uid="uid://b3gdxdhryf8fu" path="res://Recources/gaming-music-8-bit-console-play-background-intro-theme-278382.mp3" id="1_p6j5f"]
 [ext_resource type="PackedScene" uid="uid://cvx2ewikl6vnk" path="res://Levels/Player.tscn" id="2_ppc80"]
 [ext_resource type="Texture2D" uid="uid://qf271coe5ii4" path="res://Recources/wii-152197_1920.png" id="3_jeye5"]
 
@@ -8,6 +9,11 @@
 size = Vector2(1927.78, 526.452)
 
 [node name="Paralax" type="Node2D"]
+
+[node name="Gaming-music-8-bit-console-play-background-intro-theme-278382" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_p6j5f")
+volume_db = 1.0
+parameters/looping = true
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -17,36 +23,49 @@ texture_filter = 1
 motion_scale = Vector2(0, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(497, 550)
+position = Vector2(573, 567)
 texture = ExtResource("1_6s60i")
 
 [node name="Player" parent="." instance=ExtResource("2_ppc80")]
 position = Vector2(199, 461)
 
-[node name="Manette OUI" type="Node" parent="."]
+[node name="Platform" type="Node" parent="."]
 
-[node name="OUI MANETTE2" type="Sprite2D" parent="Manette OUI"]
+[node name="OUI MANETTE3" type="Sprite2D" parent="Platform"]
+position = Vector2(2502, 860)
+scale = Vector2(0.26426, 0.234619)
+texture = ExtResource("3_jeye5")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Platform/OUI MANETTE3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform/OUI MANETTE3/CharacterBody2D"]
+visible = false
+position = Vector2(3.78456, -1.52588e-05)
+shape = SubResource("RectangleShape2D_8ahq4")
+debug_color = Color(0.987527, 0, 0.312053, 0.42)
+
+[node name="OUI MANETTE2" type="Sprite2D" parent="Platform"]
 position = Vector2(620, 856)
 scale = Vector2(0.514063, 0.484375)
 texture = ExtResource("3_jeye5")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="Manette OUI/OUI MANETTE2"]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Platform/OUI MANETTE2"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Manette OUI/OUI MANETTE2/CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform/OUI MANETTE2/CharacterBody2D"]
 visible = false
-position = Vector2(-6.80847, -15.4839)
+position = Vector2(-9.7264, -6.19356)
 shape = SubResource("RectangleShape2D_8ahq4")
 debug_color = Color(0.987527, 0, 0.312053, 0.42)
 
-[node name="OUI MANETTE" type="Sprite2D" parent="Manette OUI"]
+[node name="OUI MANETTE" type="Sprite2D" parent="Platform"]
 position = Vector2(1641, 827)
 scale = Vector2(0.514063, 0.484375)
 texture = ExtResource("3_jeye5")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="Manette OUI/OUI MANETTE"]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Platform/OUI MANETTE"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Manette OUI/OUI MANETTE/CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform/OUI MANETTE/CharacterBody2D"]
 visible = false
-position = Vector2(-6.80847, -15.4839)
+position = Vector2(-3.89054, 4.12914)
 shape = SubResource("RectangleShape2D_8ahq4")
 debug_color = Color(0.987527, 0, 0.312053, 0.42)

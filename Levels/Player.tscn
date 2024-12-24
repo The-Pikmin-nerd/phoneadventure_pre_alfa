@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d1wbuobcsxxgv" path="res://Recources/smartphone-5830488_1920.png" id="2_wcxjc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vs4u3"]
-size = Vector2(120, 241)
+size = Vector2(120, 233.5)
 
 [sub_resource type="GDScript" id="GDScript_0bhdy"]
 script/source = "extends Camera2D
@@ -34,7 +34,7 @@ texture = ExtResource("2_wcxjc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2(76, 143)
+position = Vector2(76, 139.25)
 shape = SubResource("RectangleShape2D_vs4u3")
 
 [node name="Camera2D" type="Camera2D" parent="."]

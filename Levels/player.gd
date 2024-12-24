@@ -10,7 +10,7 @@ const GRAVITY = Vector2(0, 500.0)
 @export var death_zone_y: float = 800.0 # Limite de mort si le personnage descend trop bas
 
 func _physics_process(delta: float) -> void:
-	# Appliquer la gravité si le personnage n'est pas au sol
+	# Appliquer la gravité si le personnage n'est pas au sol 
 	if not is_on_floor():
 		velocity += GRAVITY * delta
 	
@@ -39,5 +39,16 @@ func check_death_conditions() -> void:
 
 
 func die() -> void:
-	print("Le personnage est mort !")
-	queue_free() # Détruire le personnage
+	print("Le personnage est mort. Rechargement de la scène...")
+
+
+	# Précharge et instancie la nouvelle scène
+	var simultaneous_scene = preload("res://Levels/Level-1.tscn").instantiate()
+	
+	# Ajoute la nouvelle scène à la racine de l'arbre de scène
+	_add_a_scene_manually(simultaneous_scene)
+
+func _add_a_scene_manually(scene: Node) -> void:
+	# Ajoute la nouvelle scène à l'arbre de scène
+	get_tree().root.add_child(scene)
+	get_tree().current_scene.queue_free()
