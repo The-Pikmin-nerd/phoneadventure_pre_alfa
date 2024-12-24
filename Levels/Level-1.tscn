@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://qf271coe5ii4" path="res://Recources/wii-152197_1920.png" id="4_ny5aw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w6he7"]
-size = Vector2(1938.58, 594.93)
+size = Vector2(1898.35, 583.125)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vs4u3"]
 size = Vector2(120, 241)
@@ -40,38 +40,12 @@ position = Vector2(338, 942)
 scale = Vector2(0.322917, 0.295833)
 
 [node name="wiiPlatform" type="Sprite2D" parent="Wiiplatform"]
+position = Vector2(-27.8709, 0)
 texture = ExtResource("4_ny5aw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wiiplatform"]
 visible = false
 position = Vector2(-30.9677, 23.6619)
-shape = SubResource("RectangleShape2D_w6he7")
-one_way_collision_margin = 10.0
-debug_color = Color(0.918699, 6.77681e-05, 0.701187, 0.42)
-
-[node name="Wiiplatform2" type="StaticBody2D" parent="."]
-position = Vector2(338, 942)
-scale = Vector2(0.322917, 0.295833)
-
-[node name="wiiPlatform" type="Sprite2D" parent="Wiiplatform2"]
-position = Vector2(4344.77, -253.522)
-texture = ExtResource("4_ny5aw")
-
-[node name="wiiPlatform" type="Sprite2D" parent="Wiiplatform2/wiiPlatform"]
-position = Vector2(2347.35, 530.705)
-texture = ExtResource("4_ny5aw")
-
-[node name="wiiPlatform" type="Sprite2D" parent="Wiiplatform2/wiiPlatform/wiiPlatform"]
-position = Vector2(2347.35, 530.705)
-texture = ExtResource("4_ny5aw")
-
-[node name="wiiPlatform" type="Sprite2D" parent="Wiiplatform2/wiiPlatform/wiiPlatform/wiiPlatform"]
-position = Vector2(2316.38, -1172.96)
-texture = ExtResource("4_ny5aw")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wiiplatform2"]
-visible = false
-position = Vector2(4354.06, -236.62)
 shape = SubResource("RectangleShape2D_w6he7")
 one_way_collision_margin = 10.0
 debug_color = Color(0.918699, 6.77681e-05, 0.701187, 0.42)
@@ -91,16 +65,46 @@ shape = SubResource("RectangleShape2D_w6he7")
 one_way_collision_margin = 10.0
 debug_color = Color(0.918699, 6.77681e-05, 0.701187, 0.42)
 
+[node name="Wiiplatform4" type="StaticBody2D" parent="."]
+position = Vector2(355, 925)
+scale = Vector2(0.322917, 0.295833)
+
+[node name="wiiPlatform" type="Sprite2D" parent="Wiiplatform4"]
+position = Vector2(4806.19, 128.451)
+texture = ExtResource("4_ny5aw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wiiplatform4"]
+visible = false
+position = Vector2(4806.19, 152.113)
+shape = SubResource("RectangleShape2D_w6he7")
+one_way_collision_margin = 10.0
+debug_color = Color(0.918699, 6.77681e-05, 0.701187, 0.42)
+
+[node name="Wiiplatform4" type="StaticBody2D" parent="Wiiplatform4"]
+position = Vector2(355, 925)
+scale = Vector2(0.322917, 0.295833)
+
+[node name="wiiPlatform" type="Sprite2D" parent="Wiiplatform4/Wiiplatform4"]
+position = Vector2(9497.58, -3309.59)
+texture = ExtResource("4_ny5aw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wiiplatform4/Wiiplatform4"]
+visible = false
+position = Vector2(9497.59, -3286.73)
+shape = SubResource("RectangleShape2D_w6he7")
+one_way_collision_margin = 10.0
+debug_color = Color(0.918699, 6.77681e-05, 0.701187, 0.42)
+
 [node name="Player" type="CharacterBody2D" parent="."]
 script = ExtResource("2_pfh43")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
-position = Vector2(339, 603)
+position = Vector2(147, 617)
 scale = Vector2(0.12551, 0.125)
 texture = ExtResource("2_gyub1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(340, 601)
+position = Vector2(146, 618)
 shape = SubResource("RectangleShape2D_vs4u3")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]

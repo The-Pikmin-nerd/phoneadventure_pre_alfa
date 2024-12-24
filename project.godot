@@ -13,7 +13,16 @@ config_version=5
 config/name="PhoneAdventure"
 run/main_scene="res://Senes/MainMenu.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/image="res://Recources/shooting-star-2024127_1920.png"
 config/icon="res://Recources/icon.svg"
+
+[autoload]
+
+SaveSystem="*res://addons/save_system/save_system.gd"
+SceneManager="*res://addons/scene_manager/SceneManager.tscn"
+Signal_Debugger="*res://addons/SignalVisualizer/Debugger/SignalDebugger.gd"
+CsgToolkitAutoload="*res://addons/csg_toolkit/scripts/csg_toolkit_config.gd"
 
 [display]
 
@@ -26,6 +35,10 @@ window/snap/snap_2d_transforms_to_pixel=false
 [dotnet]
 
 project/assembly_name="PhoneAdventure"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/SharePlugin/plugin.cfg", "res://addons/SignalVisualizer/plugin.cfg", "res://addons/SystemBarColorChanger/plugin.cfg", "res://addons/csg_toolkit/plugin.cfg", "res://addons/globalize-plugins/plugin.cfg", "res://addons/mobile/plugin.cfg", "res://addons/net.yarvis.pixel_pen/plugin.cfg", "res://addons/ridiculous_coding/plugin.cfg", "res://addons/rmsmartshape/plugin.cfg", "res://addons/save_system/plugin.cfg", "res://addons/scene_manager/plugin.cfg")
 
 [input]
 

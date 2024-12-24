@@ -1,0 +1,96 @@
+[gd_scene load_steps=18 format=3 uid="uid://dmdyqadsq3fea"]
+
+[ext_resource type="Material" uid="uid://lhc8vr13vilx" path="res://materials/new_standard_material_3d.tres" id="1_nslb8"]
+
+[sub_resource type="Curve3D" id="Curve3D_tsthl"]
+bake_interval = 0.4
+_data = {
+"points": PackedVector3Array(-5.22148, -0.961523, 2.03552, 5.22148, 0.961523, -2.03552, -6.93808, 0.195468, 4.39449, -2.36398, -1.85287, 1.30594, 2.36398, 1.85287, -1.30594, -5.87935, 1.85248, -2.30134, -3.25517, -0.361767, -1.82049, 3.25517, 0.361767, 1.82049, 6.58183, 2.00297, -3.11569),
+"tilts": PackedFloat32Array(1.52909, 0.567261, 0.282393)
+}
+point_count = 3
+
+[sub_resource type="HNOutput" id="HNOutput_nbgg3"]
+
+[sub_resource type="HNCombineXY" id="HNCombineXY_pva2e"]
+
+[sub_resource type="HNRepeatData" id="HNRepeatData_7qy8i"]
+
+[sub_resource type="HNInputInteger" id="HNInputInteger_70gnx"]
+int_value = 2
+
+[sub_resource type="HNCurveToPoints" id="HNCurveToPoints_hnk5n"]
+
+[sub_resource type="HNMeshCube" id="HNMeshCube_t8781"]
+
+[sub_resource type="HNInputCurve3D" id="HNInputCurve3D_hd70p"]
+
+[sub_resource type="HNMeshLine" id="HNMeshLine_h44hw"]
+
+[sub_resource type="HNCurveToMesh" id="HNCurveToMesh_684tp"]
+
+[sub_resource type="HNComposeMesh" id="HNComposeMesh_23jh8"]
+
+[sub_resource type="HNDecomposeMesh" id="HNDecomposeMesh_tsy7a"]
+
+[sub_resource type="HNMathMultiply" id="HNMathMultiply_rfbq8"]
+
+[sub_resource type="HNInputValue" id="HNInputValue_o5r1k"]
+float_value = 0.2
+
+[sub_resource type="HNSeparateXY" id="HNSeparateXY_6vhud"]
+
+[sub_resource type="HoodieMesh" id="HoodieMesh_fa5gq"]
+graph_offset = Vector2(2811.59, 39.195)
+nodes/1/node = SubResource("HNOutput_nbgg3")
+nodes/1/position = Vector2(2740, 300)
+nodes/2/node = SubResource("HNInputCurve3D_hd70p")
+nodes/2/position = Vector2(500, 340)
+nodes/3/node = SubResource("HNMeshLine_h44hw")
+nodes/3/position = Vector2(540, 500)
+nodes/4/node = SubResource("HNCurveToMesh_684tp")
+nodes/4/position = Vector2(900, 420)
+nodes/5/node = SubResource("HNComposeMesh_23jh8")
+nodes/5/position = Vector2(2360, 540)
+nodes/6/node = SubResource("HNDecomposeMesh_tsy7a")
+nodes/6/position = Vector2(1160, 420)
+nodes/7/node = SubResource("HNMathMultiply_rfbq8")
+nodes/7/position = Vector2(1760, 820)
+nodes/8/node = SubResource("HNInputValue_o5r1k")
+nodes/8/position = Vector2(1500, 840)
+nodes/9/node = SubResource("HNSeparateXY_6vhud")
+nodes/9/position = Vector2(1480, 980)
+nodes/10/node = SubResource("HNCombineXY_pva2e")
+nodes/10/position = Vector2(2000, 980)
+nodes/11/node = SubResource("HNRepeatData_7qy8i")
+nodes/11/position = Vector2(2100, 560)
+nodes/12/node = SubResource("HNInputInteger_70gnx")
+nodes/12/position = Vector2(1680, 600)
+nodes/13/node = SubResource("HNCurveToPoints_hnk5n")
+nodes/13/position = Vector2(1100, 920)
+nodes/14/node = SubResource("HNMeshCube_t8781")
+nodes/14/position = Vector2(2400, 180)
+nodes/connections = Array[int]([2, 0, 4, 0, 3, 0, 4, 1, 4, 0, 6, 0, 6, 0, 5, 0, 6, 1, 5, 1, 6, 12, 5, 12, 6, 4, 9, 0, 9, 0, 7, 0, 7, 0, 10, 0, 9, 1, 10, 1, 10, 0, 11, 0, 12, 0, 11, 1, 10, 0, 5, 4, 2, 0, 13, 0, 8, 0, 7, 1, 14, 0, 1, 0])
+"inputs/[2] Input Curve 3D [0] Curve3D" = SubResource("Curve3D_tsthl")
+_surfaces = [{
+"aabb": AABB(-0.5, -0.5, -0.5, 1, 1, 1.00001),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray(0, 0, 2, 0, 1, 0, 2, 0, 0, 0, 3, 0, 4, 0, 5, 0, 6, 0, 6, 0, 7, 0, 4, 0, 8, 0, 9, 0, 10, 0, 10, 0, 11, 0, 8, 0, 14, 0, 13, 0, 12, 0, 12, 0, 15, 0, 14, 0, 18, 0, 17, 0, 16, 0, 16, 0, 19, 0, 18, 0, 20, 0, 21, 0, 22, 0, 22, 0, 23, 0, 20, 0),
+"material": ExtResource("1_nslb8"),
+"name": "1",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray(0, 0, 0, 191, 0, 0, 0, 191, 0, 0, 0, 63, 0, 0, 0, 63, 0, 0, 0, 191, 0, 0, 0, 63, 0, 0, 0, 63, 0, 0, 0, 63, 0, 0, 0, 63, 0, 0, 0, 191, 0, 0, 0, 63, 0, 0, 0, 63, 0, 0, 0, 191, 0, 0, 0, 191, 0, 0, 0, 191, 0, 0, 0, 63, 0, 0, 0, 191, 0, 0, 0, 191, 0, 0, 0, 63, 0, 0, 0, 63, 0, 0, 0, 191, 0, 0, 0, 191, 0, 0, 0, 63, 0, 0, 0, 191, 0, 0, 0, 191, 0, 0, 0, 63, 0, 0, 0, 191, 0, 0, 0, 63, 0, 0, 0, 63, 0, 0, 0, 191, 0, 0, 0, 63, 0, 0, 0, 63, 0, 0, 0, 63, 0, 0, 0, 191, 0, 0, 0, 63, 0, 0, 0, 63, 0, 0, 0, 191, 0, 0, 0, 191, 0, 0, 0, 191, 0, 0, 0, 63, 0, 0, 0, 191, 0, 0, 0, 191, 0, 0, 0, 63, 0, 0, 0, 191, 0, 0, 0, 63, 0, 0, 0, 191, 0, 0, 0, 191, 0, 0, 0, 63, 0, 0, 0, 63, 0, 0, 0, 191, 0, 0, 0, 191, 0, 0, 0, 63, 0, 0, 0, 63, 0, 0, 0, 191, 0, 0, 0, 63, 0, 0, 0, 63, 0, 0, 0, 63, 0, 0, 0, 63, 0, 0, 0, 191, 0, 0, 0, 63, 0, 0, 0, 191, 0, 0, 0, 191, 0, 0, 0, 191, 0, 0, 0, 191, 0, 0, 0, 63, 0, 0, 0, 191, 0, 0, 0, 191, 0, 0, 0, 63, 0, 0, 0, 63, 0, 0, 0, 191, 0, 0, 0, 191, 0, 0, 0, 63, 255, 127, 255, 127, 255, 255, 255, 191, 255, 127, 255, 127, 255, 255, 255, 191, 255, 127, 255, 127, 255, 255, 255, 191, 255, 127, 255, 127, 255, 255, 255, 191, 255, 255, 255, 255, 0, 0, 255, 191, 255, 255, 255, 255, 0, 0, 255, 191, 255, 255, 255, 255, 0, 0, 255, 191, 255, 255, 255, 255, 0, 0, 255, 191, 255, 127, 255, 255, 0, 0, 0, 128, 255, 127, 255, 255, 0, 0, 0, 128, 255, 127, 255, 255, 0, 0, 0, 128, 255, 127, 255, 255, 0, 0, 0, 128, 255, 127, 0, 0, 0, 0, 0, 128, 255, 127, 0, 0, 0, 0, 0, 128, 255, 127, 0, 0, 0, 0, 0, 128, 255, 127, 0, 0, 0, 0, 0, 128, 255, 255, 255, 127, 255, 255, 255, 255, 255, 255, 255, 127, 255, 255, 255, 255, 255, 255, 255, 127, 255, 255, 255, 255, 255, 255, 255, 127, 255, 255, 255, 255, 0, 0, 255, 127, 255, 127, 255, 191, 0, 0, 255, 127, 255, 127, 255, 191, 0, 0, 255, 127, 255, 127, 255, 191, 0, 0, 255, 127, 255, 127, 255, 191)
+}]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("HoodieMesh_fa5gq")
+
+[node name="Path3D" type="Path3D" parent="."]
+visible = false
+curve = SubResource("Curve3D_tsthl")
