@@ -9,34 +9,6 @@ size = Vector2(1927.78, 526.452)
 
 [node name="Paralax" type="Node2D"]
 
-[node name="Manette OUI" type="Node" parent="."]
-
-[node name="OUI MANETTE" type="Sprite2D" parent="."]
-position = Vector2(620, 997)
-scale = Vector2(0.514063, 0.484375)
-texture = ExtResource("3_jeye5")
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="OUI MANETTE"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="OUI MANETTE/CharacterBody2D"]
-visible = false
-position = Vector2(-6.80847, -15.4839)
-shape = SubResource("RectangleShape2D_8ahq4")
-debug_color = Color(0.987527, 0, 0.312053, 0.42)
-
-[node name="OUI MANETTE2" type="Sprite2D" parent="."]
-position = Vector2(620, 997)
-scale = Vector2(0.514063, 0.484375)
-texture = ExtResource("3_jeye5")
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="OUI MANETTE2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="OUI MANETTE2/CharacterBody2D"]
-visible = false
-position = Vector2(-6.80847, -15.4839)
-shape = SubResource("RectangleShape2D_8ahq4")
-debug_color = Color(0.987527, 0, 0.312053, 0.42)
-
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -45,8 +17,36 @@ texture_filter = 1
 motion_scale = Vector2(0, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(758, 329)
+position = Vector2(497, 550)
 texture = ExtResource("1_6s60i")
 
 [node name="Player" parent="." instance=ExtResource("2_ppc80")]
-position = Vector2(199, 574)
+position = Vector2(199, 461)
+
+[node name="Manette OUI" type="Node" parent="."]
+
+[node name="OUI MANETTE2" type="Sprite2D" parent="Manette OUI"]
+position = Vector2(620, 856)
+scale = Vector2(0.514063, 0.484375)
+texture = ExtResource("3_jeye5")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Manette OUI/OUI MANETTE2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Manette OUI/OUI MANETTE2/CharacterBody2D"]
+visible = false
+position = Vector2(-6.80847, -15.4839)
+shape = SubResource("RectangleShape2D_8ahq4")
+debug_color = Color(0.987527, 0, 0.312053, 0.42)
+
+[node name="OUI MANETTE" type="Sprite2D" parent="Manette OUI"]
+position = Vector2(1641, 827)
+scale = Vector2(0.514063, 0.484375)
+texture = ExtResource("3_jeye5")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Manette OUI/OUI MANETTE"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Manette OUI/OUI MANETTE/CharacterBody2D"]
+visible = false
+position = Vector2(-6.80847, -15.4839)
+shape = SubResource("RectangleShape2D_8ahq4")
+debug_color = Color(0.987527, 0, 0.312053, 0.42)

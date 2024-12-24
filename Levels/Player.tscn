@@ -38,5 +38,5 @@ position = Vector2(76, 143)
 shape = SubResource("RectangleShape2D_vs4u3")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(342, 491)
+position = Vector2(65, 32)
 script = SubResource("GDScript_0bhdy")
