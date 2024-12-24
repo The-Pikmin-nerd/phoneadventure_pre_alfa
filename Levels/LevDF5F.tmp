@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6y8fxq3t42gc"]
+
+[ext_resource type="Texture2D" uid="uid://b72jeu15j0qsa" path="res://Recources/space-art-5626848.jpg" id="1_6s60i"]
+[ext_resource type="PackedScene" uid="uid://cvx2ewikl6vnk" path="res://Levels/Player.tscn" id="2_ppc80"]
+
+[node name="Paralax" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+top_level = true
+texture_filter = 1
+motion_scale = Vector2(0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(739, 560)
+texture = ExtResource("1_6s60i")
+
+[node name="Player" parent="." instance=ExtResource("2_ppc80")]
+position = Vector2(110, 60)

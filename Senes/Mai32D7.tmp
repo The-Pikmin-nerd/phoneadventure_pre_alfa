@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cjp6bheicsi0r"]
+[gd_scene load_steps=6 format=3 uid="uid://cjp6bheicsi0r"]
 
 [ext_resource type="Texture2D" uid="uid://dr3iia0qvfeql" path="res://Recources/stars-2643089_1920.jpg" id="1_h6q4h"]
 [ext_resource type="Script" path="res://Senes/play_button.gd" id="2_d71dp"]
 [ext_resource type="PackedScene" uid="uid://f4tiqnp8tflm" path="res://addons/mobile/signals_manager/signals_manager.tscn" id="3_4xl4x"]
+[ext_resource type="Script" path="res://addons/mobile/signals_manager/signals_manager.gd" id="4_qjkv8"]
 
 [sub_resource type="Theme" id="Theme_ok6mn"]
 
@@ -43,6 +44,10 @@ metadata/_edit_use_anchors_ = true
 metadata/signals_manager_path = "../mobile_plugin_signals_manager"
 metadata/tooltip_on_mobile = false
 
-[node name="mobile_plugin_signals_manager" parent="." instance=ExtResource("3_4xl4x")]
+[node name="mobile_plugin_signals_manager" type="Node" parent="." instance=ExtResource("3_4xl4x")]
+editor_description = "The mobile plugin uses this node to store node connections. It is an internal node. If you delete this node, it will be recreated, but any connections you made through the mobile plugin will be lost. The node must be a direct child of the scene root and have the same name as found in \"mobile.gd\".CONNECTOR"
+script = ExtResource("4_qjkv8")
+metadata/tooltip_overrides = {}
+metadata/help_bar_overrides = {}
 
 [connection signal="pressed" from="PlayButton" to="PlayButton" method="_on_pressed"]

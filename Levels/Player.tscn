@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvx2ewikl6vnk"]
+
+[ext_resource type="Script" path="res://Levels/player.gd" id="1_2vk8p"]
+[ext_resource type="Texture2D" uid="uid://d1wbuobcsxxgv" path="res://Recources/smartphone-5830488_1920.png" id="2_wcxjc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vs4u3"]
+size = Vector2(120, 241)
+
+[sub_resource type="GDScript" id="GDScript_0bhdy"]
+script/source = "extends Camera2D
+
+func _ready():
+	# Initialisation des limites de la caméra dynamiquement.
+	update_camera_limits()
+
+func _process(delta: float) -> void:
+	# Vérifie la position de la caméra à chaque frame.
+	if position.y > limit_bottom:
+		position.y = limit_bottom
+
+func update_camera_limits():
+	# Mise à jour dynamique des limites de la caméra.
+	limit_top = max(limit_top, 0)  # La limite supérieure ne peut pas être négative.
+	limit_left = max(limit_left, 0) # La limite gauche ne peut pas être négative.
+"
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_2vk8p")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(76, 136)
+scale = Vector2(0.12551, 0.125)
+texture = ExtResource("2_wcxjc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(76, 143)
+shape = SubResource("RectangleShape2D_vs4u3")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(342, 491)
+script = SubResource("GDScript_0bhdy")
